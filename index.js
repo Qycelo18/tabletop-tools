@@ -41,7 +41,6 @@ function doesStrikeHit(attack, ac) {
 function doesStrikeCrit(attack, ac) {
   return attack >= ac + 10;
 }
-console.log(doesStrikeCrit(20, 10));
 
 /**
  * A creature can restore hit points (HP) by healing,
@@ -52,7 +51,9 @@ console.log(doesStrikeCrit(20, 10));
  * @returns {number} total hit points after healing
  */
 function heal(maxHp, currentHp, healAmount) {
-  // TODO
+  if (currentHp + healAmount <= maxHp) {
+    return currentHp + healAmount;
+  }
 }
 
 /**
